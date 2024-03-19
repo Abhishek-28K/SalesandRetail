@@ -23,7 +23,7 @@ body{
     width: 430px;
     height: 520px;
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-48%,-50%);
     left: 50%;
     top: 50%;
 }
@@ -47,11 +47,11 @@ body{
         #ff512f,
         #f09819
     );
-    right: -30px;
-    bottom: -80px;
+    right: -60px;
+    bottom: -100px;
 }
 form{
-    height: 520px;
+    height: 570px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
@@ -142,14 +142,28 @@ button{
     <form method="post">
         <h3>Login Here</h3>
         {% csrf_token %} 
+
+        {% if messages %}
+    {{ message.tags }}
+    <div class="alert alert-warning" role="alert">
+    {% for message in messages %}
+    {{ message }}
+     {% endfor %} 
+      </div>
+      {% endif %}
+
+
         <label for="username">Username</label>
-        <input type="text" placeholder="Enter Username" id="username" name="username">
+        <input type="text" placeholder="Enter Username" id="username" name="username" required>
 
         <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password" name="pass">
+        <input type="password" placeholder="Password" id="password" name="pass" required>
+
 
         <button type="submit">Log In</button>
+        <p style="text-align: center;">Forgot Password?
+            <a href="ForgotPassword">Click Here</a></p>
             <p style="text-align: center;">New User?
-        <a href="{% url 'signup' %} " >Create a account</a></p>
+        <a href="{% url 'signup' %} " >Register Here</a></p>
     </form>
 </body>

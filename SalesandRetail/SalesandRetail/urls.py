@@ -28,4 +28,6 @@ urlpatterns = [
     path('dashboard/',iviews.Dashboard,name='dashboard'),
     path('inventory/',iviews.inventory,name='inventory'),
     path('sales/',iviews.SalesPage,name='sales'),
+    path("ChangePassword/<token>/",views.ChangePassword,name="ChangePassword"),
+    path("ForgotPassword",views.ForgotPassword,name="ForgotPassword"),
 ]

@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate
 from .models import *
 from django.http import JsonResponse
 from django.db.models import F
-import plotly
+# import plotlib
 # Create your views here. 
 
 

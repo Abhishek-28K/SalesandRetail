@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Inventory(models.Model):
@@ -20,3 +21,4 @@ class Sales(models.Model):
     QuantitySold=models.IntegerField()
     PS_Date=models.DateField(null=True,blank=True)
     SellingPrice=models.IntegerField()
+
